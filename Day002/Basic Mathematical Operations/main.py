@@ -43,9 +43,6 @@ I will try to improve my lambda functions, to use it instead of using eval next 
 3. Performance: eval() can be slower than direct operations due to the overhead of parsing and interpreting the string.
 """
 
-operator = input("ENTER OPERATION: ")
-value1 = float(input("ENTER FIST NUMBER: "))
-value2 = float(input("ENTER SECOND NUMBER: "))
 
 def basic_op(operator, value1, value2):
     try:
@@ -54,19 +51,5 @@ def basic_op(operator, value1, value2):
         return "Invalid Operator"
     except NameError:
         return "Invalid Value"
-    except ValueError:
-        return "Invalid Value"
 
-print(basic_op(operator, value1, value2))
-
-def safe_calculate(operation, a, b):
-    operations = {
-        '+': lambda x, y: x + y,
-        '-': lambda x, y: x - y,
-        '*': lambda x, y: x * y,
-        '/': lambda x, y: x / y,
-    }
-    return operations.get(operation, lambda x, y: "Operasi tidak dikenali!")(a, b)
-
-
-print(safe_calculate('+', 10, 5))  # Output: 15
+print(basic_op("+", '12', '23'))
